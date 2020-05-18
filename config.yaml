@@ -1,0 +1,3 @@
+domain: "http://localhost"
+debug: true
+port: 7404
