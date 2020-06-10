@@ -1,13 +1,12 @@
 (ns api2smtp.urls
   (:require
-   [compojure.core :refer [defroutes GET]]
+   [compojure.core :refer [defroutes POST]]
    [compojure.route :as route]
    [api2smtp.views.public :as view-public]))
 
 (defroutes public
   ;; Urls public pages
-  (GET "/" [] view-public/index)
-  (GET "/api" [] view-public/api))
+  (POST "/api/v1/email/" [] view-public/index))
 
 
 (defroutes resources-routes

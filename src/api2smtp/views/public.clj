@@ -1,20 +1,20 @@
 ;;;; Views public web
 (ns api2smtp.views.public
   (:require
-   [tadam.templates :refer [render-HTML render-JSON render-404]]
-   ))
+   [tadam.templates :refer [render-JSON]]
+   [tadam.responses :refer [response]]))
 
 (defn index
   ;; View HTML
   [req]
-    (render-HTML req "public/welcome.html" {}))
+  (let [name    (-> :params :name)
+        subject (-> :params :subject)
+        email   (-> :params :email)
+        message (-> :params :message)]
 
-(defn api
-  ;; View JSON
-  [req]
-    (render-JSON req {:result true}))
+    (render-JSON req {:status "ok"})))
 
 (defn page-404
   ;; View page 404
   [req]
-  (render-404 req "public/404.html" {}))
+  (response req "{\"status\": \"error\"}" 500 "text/json;charset=utf-8"))
