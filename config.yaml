@@ -1,9 +1,11 @@
-domain: "http://localhost"
+domain: localhost
 debug: true
 port: 7404
-smtp-from: "api2smtp <no-reply@www.tadam-framework.dev>"
-smtp-host: localhost
-smtp-user:
-smtp-pass:
-smtp-tls: false
-smtp-port: 1025
+smtp-from: "no-reply@domain.com"
+smtp-to: "my@domain.com"
+smtp-subject: "Contact"
+smtp-host: "smtp.domain.com"
+smtp-user: ""
+smtp-password: ""
+smtp-port: 587
+smtp-tls: true
