@@ -3,17 +3,20 @@
   (:require
    [tadam.templates :refer [render-template render-JSON]]
    [tadam.responses :refer [response]]
-   [tadam.email :refer [send]]))
+   [tadam.utils :refer [get-JSON]]
+   [tadam.email :refer [send]]
+   [api2smtp.config :refer [config]]))
 
-(defn send
+(defn send-email
   ;; View Send email
   [req]
-  (let [params {:name    (-> req :params :name)
-                :subject (-> req :params :subject)
-                :email   (-> req :params :email)
-                :message (-> req :params :message)}]
+  (let [json   (get-JSON req)
+        params {:name    (-> json :name)
+                :subject (-> json :subject)
+                :email   (-> json :email)
+                :message (-> json :message)}]
     ;; Send email
-    (send "to@email.com" "Contact" (render-template "emails/contact.html" params) (render-template "emails/contact.txt" params))
+    (send config "to@email.com" "Contact" (render-template "emails/contact.html" params) (render-template "emails/contact.txt" params))
 
     ;; Response OK
     (render-JSON req {:status "ok"})))

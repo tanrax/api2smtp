@@ -6,7 +6,7 @@
 
 (defroutes public
   ;; Urls public endpoints
-  (POST "/api/v1/email/" [] view-public/send))
+  (POST "/api/v1/email/" [] view-public/send-email))
 
 
 (defroutes resources-routes
