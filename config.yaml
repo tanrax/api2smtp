@@ -1,4 +1,5 @@
-domain: localhost
+domain: "domain.com" 
+domain-cli: "domain.com"
 debug: true
 port: 7404
 smtp-from: "no-reply@domain.com"
