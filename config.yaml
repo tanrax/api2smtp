@@ -5,5 +5,5 @@ smtp-from: "api2smtp <no-reply@www.tadam-framework.dev>"
 smtp-host: localhost
 smtp-user:
 smtp-pass:
-smtp-ssl: false
+smtp-tls: false
 smtp-port: 1025
