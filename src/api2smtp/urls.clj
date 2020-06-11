@@ -5,14 +5,14 @@
    [api2smtp.views.public :as view-public]))
 
 (defroutes public
-  ;; Urls public pages
-  (POST "/api/v1/email/" [] view-public/index))
+  ;; Urls public endpoints
+  (POST "/api/v1/email/" [] view-public/send))
 
 
 (defroutes resources-routes
   ;; Resources (statics)
   (route/resources "/")
-  (route/not-found view-public/page-404))
+  (route/not-found view-public/error))
 
 (def all-routes
   ;; Wrap routers. "resources-routes" should always be the last.

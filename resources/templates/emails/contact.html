@@ -1,0 +1,32 @@
+{% extends "layouts/base.html" %}
+
+{% block subject %}
+{{ subject }}
+{% endblock %}
+
+{% block content %}
+<p>
+    <strong>Name:</strong>
+</p>
+<p>
+    {{ name }}
+</p>
+<p>
+    <strong>Email:</strong>
+</p>
+<p>
+    {{ email }}
+</p>
+<p>
+    <strong>Subject:</strong>
+</p>
+<p>
+    {{ subject }}
+</p>
+<p>
+    <strong>Message:</strong>
+</p>
+<p>
+    {{ message }}
+</p>
+{% endblock %}
