@@ -16,7 +16,7 @@
                 :email   (-> json :email)
                 :message (-> json :message)}]
     ;; Send email
-    (send config (:smtp-to config) (:smtp-to config) (render-template "emails/contact.html" params) (render-template "emails/contact.txt" params))
+    (send config (:smtp-to config) (:smtp-subject config) (render-template "emails/contact.html" params) (render-template "emails/contact.txt" params))
 
     ;; Response OK
     (render-JSON req {:status "ok"})))
