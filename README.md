@@ -55,7 +55,7 @@ Great 🎉. You already have your 🔥 own API send mails 🔥.
 That's it, now you just have to test that it works properly.
 
 ``` sh
-curl -H "Content-type: application/json" -d '{
+curl -XPOST -H "Content-type: application/json" -d '{
 	"name": "Cid",
 	"subject": "Awesome",
 	"email": "cid@campeador.es",
